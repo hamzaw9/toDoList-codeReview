@@ -1,4 +1,5 @@
 import tasks from "./taskObject.js";
+import updateLocalStorage from "./updateLocalStorage.js";
 
 const listContainer = document.getElementById("list-container");
 
@@ -9,7 +10,7 @@ const taskStatusUpdate = (id, checked) => {
   } else {
     task.completed = false;
   }
-  localStorage.setItem("Tasks", JSON.stringify(tasks));
+  updateLocalStorage();
 };
 
 export const handletaskStatus = () => {
@@ -25,7 +26,7 @@ const taskDefaultStatus = () => {
   tasks.forEach((task) => {
     task.completed = false;
   });
-  localStorage.setItem("Tasks", JSON.stringify(tasks));
+  updateLocalStorage();
 };
 
 export const handleTaskDefaultStatus = () => {
